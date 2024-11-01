@@ -14,22 +14,40 @@ class Account_Settings extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-      body:SingleChildScrollView(
-        child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
+        body : Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children:<Widget> [
                 Container(
+                alignment: Alignment.bottomLeft,
                   height: 150,
                   width: double.infinity,
                   color: setColor.GreenColor,
-                ),
-                const SizedBox(
-                  height: 30,
+                  child :  TextButton(
+                      onPressed: () {
+                        Navigator.pop(context,"Back");
+                      },
+                      child: Container(
+                        alignment: Alignment.center,
+                        height: 50,
+                        width: 100,
+                        decoration : BoxDecoration(
+                          color: setColor.RedColor,
+                          shape : BoxShape.rectangle,
+                          border : Border.all(width: 1,color: Colors.black),
+                          borderRadius: BorderRadius.circular(10)
+                        ),
+                        child : const Text("পূর্ববর্তী",style : TextStyle(fontSize : 15,color : Colors.white)),
+                      ),
+                    ),
                 ),
                 Container(
+                  height: 572,
                   width: double.infinity,
                    child: SingleChildScrollView(
                           child: Column(children: [
+                          const SizedBox(
+                  height: 30,
+                ),
                     GestureDetector(
                       child: Container(
                           alignment: Alignment.center,
@@ -77,18 +95,23 @@ class Account_Settings extends StatelessWidget {
                     TextButton(
                       onPressed: () {},
                       child: Container(
-                        color: const Color.fromARGB(255, 218, 17, 3),
+                        alignment: Alignment.center,
                         height: 50,
                         width: 100,
+                        decoration : BoxDecoration(
+                          color: setColor.RedColor,
+                          shape : BoxShape.rectangle,
+                          border : Border.all(width: 1,color: Colors.black),
+                          borderRadius: BorderRadius.circular(10)
+                        ),
+                        child : Text("জমা দিন",style : TextStyle(fontSize : 15,color : Colors.white)),
                       ),
                     ),
                       const SizedBox( height: 30, )
-                             ])),               
-                 ),
+                             ])),               ),
+                
                  const DownBar(),
-             ],
-            ),
-      ),
+        ] ),
     );
   }
 }

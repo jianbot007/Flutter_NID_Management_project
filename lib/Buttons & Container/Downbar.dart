@@ -11,11 +11,12 @@ class DownBar extends StatelessWidget {
             width: double.infinity,
             color: setColor.GreenColor,
             padding: EdgeInsets.only(right: 10),
-            alignment: Alignment.bottomCenter,
+            alignment: Alignment.centerRight,
             child: Container(
                 height: 70,
                 width: 100,
-                child: const Center(
+                child: Container(
+                  alignment: Alignment.centerRight,
                     child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,

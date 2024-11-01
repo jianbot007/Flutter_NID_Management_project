@@ -22,7 +22,7 @@ class CustomTextField extends StatelessWidget {
           filled: true,
           fillColor: Colors.grey[200], // Background color of the TextField
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(30.0), // Circular border
+            borderRadius: BorderRadius.circular(10.0), // Circular border
             borderSide: BorderSide(width: 1,color : Colors.black), // No border line
           ),
           contentPadding: EdgeInsets.symmetric(

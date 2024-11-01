@@ -14,9 +14,11 @@ class Homepage extends StatelessWidget {
           child: Column(
         children: <Widget>[
           Container(
+            alignment: Alignment.center,
             height: 150,
             width: double.infinity,
             color: setColor.GreenColor,
+            child : Text("হোম পেইজ",style : TextStyle(fontSize : 20,color : Colors.white,fontWeight: FontWeight.bold))
           ),
           Container(
               color: Colors.white,
@@ -56,10 +58,9 @@ class Homepage extends StatelessWidget {
                   const SizedBox(
                     height: 50,
                   ),
-                  DownBar()
                 ]),
               )),
-          
+           DownBar()
         ],
       )),
     );
