@@ -18,7 +18,7 @@ class Homepage extends StatelessWidget {
             height: 150,
             width: double.infinity,
             color: setColor.GreenColor,
-            child : Text("হোম পেইজ",style : TextStyle(fontSize : 20,color : Colors.white,fontWeight: FontWeight.bold))
+            child : const Text("হোম পেইজ",style : TextStyle(fontSize : 20,color : Colors.white,fontWeight: FontWeight.bold))
           ),
           Container(
               color: Colors.white,
@@ -33,34 +33,34 @@ class Homepage extends StatelessWidget {
                     height: 200,
                     width: 300,
                     clipBehavior: Clip.hardEdge,
-                    child: Image.asset("Image/NID.PNG", fit: BoxFit.cover),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(color: Colors.black, width: 1),
                     ),
+                    child: Image.asset("Image/NID.PNG", fit: BoxFit.cover),
                   ),
                   const SizedBox(
                     height: 30,
                   ),
-                  AccountSettingsButton(),
+                  const AccountSettingsButton(),
                   const SizedBox(
                     height: 30,
                   ),
-                  LostNID_Apllication_Button(),
+                  const LostNID_Apllication_Button(),
                   const SizedBox(
                     height: 30,
                   ),
-                  NID_INfo_Update_Button(),
+                  const NID_INfo_Update_Button(),
                   const SizedBox(
                     height: 30,
                   ),
-                  UnknownInfo(),
+                  const UnknownInfo(),
                   const SizedBox(
                     height: 50,
                   ),
                 ]),
               )),
-           DownBar()
+           const DownBar()
         ],
       )),
     );

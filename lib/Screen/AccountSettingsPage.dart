@@ -40,7 +40,7 @@ class Account_Settings extends StatelessWidget {
                       ),
                     ),
                 ),
-                Container(
+                SizedBox(
                   height: 572,
                   width: double.infinity,
                    child: SingleChildScrollView(
@@ -104,7 +104,7 @@ class Account_Settings extends StatelessWidget {
                           border : Border.all(width: 1,color: Colors.black),
                           borderRadius: BorderRadius.circular(10)
                         ),
-                        child : Text("জমা দিন",style : TextStyle(fontSize : 15,color : Colors.white)),
+                        child : const Text("জমা দিন",style : TextStyle(fontSize : 15,color : Colors.white)),
                       ),
                     ),
                       const SizedBox( height: 30, )

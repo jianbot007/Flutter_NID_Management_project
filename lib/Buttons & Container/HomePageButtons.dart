@@ -33,7 +33,7 @@ class _AccountSettingsButtonState extends State<AccountSettingsButton> {
           Loading_Navigation();
         },
         child: isLoading
-            ? CircularProgressIndicator(
+            ? const CircularProgressIndicator(
                 color: Colors.green,
               )
             : Container(
@@ -41,13 +41,13 @@ class _AccountSettingsButtonState extends State<AccountSettingsButton> {
                 width: 300,
                 alignment: Alignment.centerLeft,
                 padding: const EdgeInsets.only(left: (10)),
+                decoration: BoxDecoration(
+                    color: Colors.black12,
+                    borderRadius: BorderRadius.circular(10)),
                 child: const Text(
                   "একাউন্ট সেটিংস",
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                 ),
-                decoration: BoxDecoration(
-                    color: Colors.black12,
-                    borderRadius: BorderRadius.circular(10)),
               ));
   }
 }
@@ -71,7 +71,7 @@ class _LostNID_Apllication_ButtonState
 
     Future.delayed(const Duration(seconds: 1), () {
       Navigator.push(context,
-          MaterialPageRoute(builder: (context) => UnknownInfo_screen()));
+          MaterialPageRoute(builder: (context) => const UnknownInfo_screen()));
       setState(() {
         isLoading = false;
       });
@@ -85,7 +85,7 @@ class _LostNID_Apllication_ButtonState
           Loading_Navigation();
         },
         child: isLoading
-            ? CircularProgressIndicator(
+            ? const CircularProgressIndicator(
                 color: Colors.green,
               )
             : Container(
@@ -93,13 +93,13 @@ class _LostNID_Apllication_ButtonState
                 width: 300,
                 alignment: Alignment.centerLeft,
                 padding: const EdgeInsets.only(left: (10)),
+                decoration: BoxDecoration(
+                    color: Colors.black12,
+                    borderRadius: BorderRadius.circular(10)),
                 child: const Text(
                   "হারানো NID আবেদন",
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                 ),
-                decoration: BoxDecoration(
-                    color: Colors.black12,
-                    borderRadius: BorderRadius.circular(10)),
               ));
   }
 }
@@ -121,7 +121,7 @@ class _NID_INfo_Update_ButtonState extends State<NID_INfo_Update_Button> {
 
     Future.delayed(const Duration(seconds: 1), () {
       Navigator.push(context,
-          MaterialPageRoute(builder: (context) => UnknownInfo_screen()));
+          MaterialPageRoute(builder: (context) => const UnknownInfo_screen()));
       setState(() {
         isLoading = false;
       });
@@ -135,7 +135,7 @@ class _NID_INfo_Update_ButtonState extends State<NID_INfo_Update_Button> {
           Loading_Navigation();
         },
         child: isLoading
-            ? CircularProgressIndicator(
+            ? const CircularProgressIndicator(
                 color: Colors.green,
               )
             : Container(
@@ -143,19 +143,19 @@ class _NID_INfo_Update_ButtonState extends State<NID_INfo_Update_Button> {
                 width: 300,
                 alignment: Alignment.centerLeft,
                 padding: const EdgeInsets.only(left: (10)),
+                decoration: BoxDecoration(
+                    color: Colors.black12,
+                    borderRadius: BorderRadius.circular(10)),
                 child: const Text(
                   "NID তথ্য সংশোধন",
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                 ),
-                decoration: BoxDecoration(
-                    color: Colors.black12,
-                    borderRadius: BorderRadius.circular(10)),
               ));
   }
 }
 
 class UnknownInfo extends StatefulWidget {
-  const UnknownInfo({Key? key}) : super(key: key);
+  const UnknownInfo({super.key});
 
   @override
   _UnknownInfoState createState() => _UnknownInfoState();
@@ -171,7 +171,7 @@ class _UnknownInfoState extends State<UnknownInfo> {
 
     Future.delayed(const Duration(seconds: 1), () {
       Navigator.push(context,
-          MaterialPageRoute(builder: (context) => UnknownInfo_screen()));
+          MaterialPageRoute(builder: (context) => const UnknownInfo_screen()));
       setState(() {
         isLoading = false;
       });
@@ -185,7 +185,7 @@ class _UnknownInfoState extends State<UnknownInfo> {
         Loading_Navigation();
       },
       child: isLoading
-          ? CircularProgressIndicator(
+          ? const CircularProgressIndicator(
               color: Colors.green,
             )
           : Container(
@@ -193,13 +193,13 @@ class _UnknownInfoState extends State<UnknownInfo> {
               width: 300,
               alignment: Alignment.centerLeft,
               padding: const EdgeInsets.only(left: 10),
-              child: const Text(
-                "অজানা তথ্য",
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-              ),
               decoration: BoxDecoration(
                 color: Colors.black12,
                 borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "অজানা তথ্য",
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
             ),
     );
