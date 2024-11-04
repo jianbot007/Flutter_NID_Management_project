@@ -10,29 +10,29 @@ class DownBar extends StatelessWidget {
             height: 80,
             width: double.infinity,
             color: setColor.GreenColor,
-            padding: EdgeInsets.only(right: 10),
+            padding: const EdgeInsets.only(right: 10),
             alignment: Alignment.centerRight,
-            child: Container(
+            child: SizedBox(
                 height: 70,
                 width: 100,
                 child: Container(
                   alignment: Alignment.centerRight,
-                    child: Column(
+                    child: const Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
+                    Text(
                       "Contact Us",
                       style: TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.bold,
                           color: Colors.white),
                     ),
-                    const Text(
+                    Text(
                       "Call Center Number : 105",
                       style: TextStyle(fontSize: 8, color: Colors.white),
                     ),
-                    const Text(
+                    Text(
                       "Visit our Facebook Page",
                       style: TextStyle(
                           fontSize: 9,
