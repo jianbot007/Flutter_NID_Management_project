@@ -8,9 +8,9 @@ import 'package:flutter_nid_management_project/setColor.dart';
 // ignore: must_be_immutable
 class LoginScreen extends StatelessWidget {
   // ignore: non_constant_identifier_names
-  TextEditingController _nId_No_controller = TextEditingController();
+  final TextEditingController _nId_No_controller = TextEditingController();
   // ignore: non_constant_identifier_names
-  TextEditingController _Password_controller = TextEditingController();
+  final TextEditingController _Password_controller = TextEditingController();
   LoginScreen({super.key});
 
   @override
@@ -23,7 +23,7 @@ class LoginScreen extends StatelessWidget {
           children: <Widget>[
             Expanded(
               flex : 1,
-              child: Container(
+              child: SizedBox(
                 //  height : 100,
                 width: double.infinity,
                 child: Image.asset("Image/JATIOPORICHOYHOMEPAGE.PNG",
@@ -37,7 +37,7 @@ class LoginScreen extends StatelessWidget {
               // crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const SizedBox(height: 40),
-                Container(
+                SizedBox(
                   height: 120,
                   width: 200,
                   child: Image.asset("Image/Bangladeshi flag.png",
@@ -69,7 +69,7 @@ class LoginScreen extends StatelessWidget {
                       TextButton(
                         onPressed: () {
                            Navigator.push(
-                            context,  MaterialPageRoute(builder: (context) => LoadingScreen(nextScreen: Homepage(),))
+                            context,  MaterialPageRoute(builder: (context) => const LoadingScreen(nextScreen: Homepage(),))
                           );
                         },
                         child: Container(

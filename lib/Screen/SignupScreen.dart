@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_nid_management_project/Buttons%20&%20Container/TextFields.dart';
+import 'package:flutter_nid_management_project/Model/BloodGroup.dart';
 import 'package:flutter_nid_management_project/Model/DobTextField.dart';
 import 'package:flutter_nid_management_project/Model/GenderRadio.dart';
 import 'package:flutter_nid_management_project/setColor.dart';
@@ -7,7 +8,7 @@ import 'package:flutter_nid_management_project/setColor.dart';
 class SignUpScreen extends StatelessWidget {
   final TextEditingController _birthCertificateNo = TextEditingController();
   final TextEditingController _username = TextEditingController();
-  String _gender = '' ;
+  final String _gender = '' ;
 
 
 SignUpScreen({super.key});
@@ -45,7 +46,7 @@ SignUpScreen({super.key});
                             child : const Text("পূর্ববর্তী",style : TextStyle(fontSize : 15,color : Colors.white)),
                           ),
                         ),
-                        SizedBox(width : 140),
+                        const SizedBox(width : 140),
                         TextButton(
                           onPressed: () {
                           },
@@ -64,7 +65,7 @@ SignUpScreen({super.key});
                         ),
                  ] ),
                   ),
-                  SizedBox(height: 30,),
+                  const SizedBox(height: 30,),
                    GestureDetector(
                       child: Container(
                           alignment: Alignment.center,
@@ -117,11 +118,7 @@ SignUpScreen({super.key});
                      const SizedBox(
                       height: 30,
                     ),
-                  CustomTextField(
-                      hinttext: "রক্তের গ্রুপ",
-                      IS_Password: true,
-                      controller: _birthCertificateNo,
-                    ),
+                BloodGroup(),
                       const SizedBox(
                       height: 30,
                     ),

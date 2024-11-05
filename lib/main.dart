@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_nid_management_project/Screen/Homepage.dart';
 import 'package:flutter_nid_management_project/Screen/LoginScreen.dart';
 
 void main() {

@@ -14,11 +14,12 @@ class _LoadingScreenState extends State<LoadingScreen> {
 
  
 
-   void initState() {
+   @override
+  void initState() {
     super.initState();
 
     // Delay for 1 second and then navigate to the signup screen
-    Future.delayed(Duration(seconds: 1), () {
+    Future.delayed(const Duration(seconds: 1), () {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => widget.nextScreen),
@@ -27,7 +28,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
         backgroundColor: Colors.white,
         body: Center(child: CircularProgressIndicator()));
   }

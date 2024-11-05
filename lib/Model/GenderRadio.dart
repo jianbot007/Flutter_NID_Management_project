@@ -3,7 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_nid_management_project/Screen/SignupScreen.dart';
 
 class GenderrSelection extends StatefulWidget {
-  GenderrSelection({super.key});
+  const GenderrSelection({super.key});
 
   @override
   State<GenderrSelection> createState() => _GenderrSelectionState();
@@ -25,9 +25,9 @@ class _GenderrSelectionState extends State<GenderrSelection> {
         scrollDirection: Axis.horizontal,
           child: Row(
         children: [
-          SizedBox(width: 20),
+          const SizedBox(width: 20),
           const Text("লিঙ্গ :",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+              style: TextStyle(fontSize: 15)),
           Radio(
             value: "Male",
             onChanged: (value) {
@@ -37,7 +37,7 @@ class _GenderrSelectionState extends State<GenderrSelection> {
             },
             groupValue: Gender,
           ),
-          Text("পুরুষ"),
+          const Text("পুরুষ"),
           Radio(
             value: "Female",
             onChanged: (value) {
@@ -48,7 +48,7 @@ class _GenderrSelectionState extends State<GenderrSelection> {
             },
             groupValue: Gender,
           ),
-          Text("মহিলা"),
+          const Text("মহিলা"),
           Radio(
             value: "Other",
             onChanged: (value) {
@@ -58,7 +58,7 @@ class _GenderrSelectionState extends State<GenderrSelection> {
             },
             groupValue: Gender,
           ),
-          Text("অন্যান্য"),
+          const Text("অন্যান্য"),
         ],
       )),
     );
