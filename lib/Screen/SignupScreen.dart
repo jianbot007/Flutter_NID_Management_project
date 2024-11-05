@@ -5,13 +5,37 @@ import 'package:flutter_nid_management_project/Model/DobTextField.dart';
 import 'package:flutter_nid_management_project/Model/GenderRadio.dart';
 import 'package:flutter_nid_management_project/setColor.dart';
 
-class SignUpScreen extends StatelessWidget {
-  final TextEditingController _birthCertificateNo = TextEditingController();
-  final TextEditingController _username = TextEditingController();
-  final String _gender = '' ;
-
-
+class SignUpScreen extends StatefulWidget {
 SignUpScreen({super.key});
+
+  @override
+  State<SignUpScreen> createState() => _SignUpScreenState();
+}
+
+class _SignUpScreenState extends State<SignUpScreen> {
+  final TextEditingController _birthCertificateNo = TextEditingController();
+
+  final TextEditingController _username = TextEditingController();
+
+  late String _gender ='';
+  DateTime? _pickedDon;
+ late String _Dob ;
+
+
+  
+  void _onGenderSelection(String gender){
+    setState(() {
+      _gender = gender;
+    });
+    print("Gender : $_gender");
+   
+  }
+    void _onDateSelected(DateTime date) {
+    setState(() {
+      _pickedDon = date;
+      _Dob = _pickedDon.toString();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +43,7 @@ SignUpScreen({super.key});
       body : SingleChildScrollView( 
         child :
             Column(
-                children : <Widget> [ 
-                  
-                  
+                children : <Widget> [
                 Container(
                   alignment: Alignment.bottomLeft,
                     height: 150,
@@ -110,15 +132,15 @@ SignUpScreen({super.key});
                     const SizedBox(
                       height: 30,
                     ),
-                    DateField(),
+                    DateField(onDateSelected: _onDateSelected),
                      const SizedBox(
                       height: 30,
                     ),
-                   GenderrSelection(),
+                   GenderSelection(Onselected: _onGenderSelection,),
                      const SizedBox(
                       height: 30,
                     ),
-                BloodGroup(),
+                const BloodGroup(),
                       const SizedBox(
                       height: 30,
                     ),
@@ -232,6 +254,7 @@ SignUpScreen({super.key});
                       height: 30,
                     ),
              ] ),
+
     
       )
     );

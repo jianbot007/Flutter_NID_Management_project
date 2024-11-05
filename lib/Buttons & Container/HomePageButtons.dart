@@ -43,7 +43,9 @@ class _AccountSettingsButtonState extends State<AccountSettingsButton> {
                 padding: const EdgeInsets.only(left: (10)),
                 decoration: BoxDecoration(
                     color: Colors.black12,
-                    borderRadius: BorderRadius.circular(10)),
+                    borderRadius: BorderRadius.circular(10),
+                    border : Border.all(color: Colors.black,width: 1),
+            ),
                 child: const Text(
                   "একাউন্ট সেটিংস",
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
@@ -95,6 +97,7 @@ class _LostNID_Apllication_ButtonState
                 padding: const EdgeInsets.only(left: (10)),
                 decoration: BoxDecoration(
                     color: Colors.black12,
+                     border : Border.all(color: Colors.black,width: 1),
                     borderRadius: BorderRadius.circular(10)),
                 child: const Text(
                   "হারানো NID আবেদন",
@@ -144,6 +147,7 @@ class _NID_INfo_Update_ButtonState extends State<NID_INfo_Update_Button> {
                 alignment: Alignment.centerLeft,
                 padding: const EdgeInsets.only(left: (10)),
                 decoration: BoxDecoration(
+                   border : Border.all(color: Colors.black,width: 1),
                     color: Colors.black12,
                     borderRadius: BorderRadius.circular(10)),
                 child: const Text(
@@ -194,6 +198,7 @@ class _UnknownInfoState extends State<UnknownInfo> {
               alignment: Alignment.centerLeft,
               padding: const EdgeInsets.only(left: 10),
               decoration: BoxDecoration(
+                 border : Border.all(color: Colors.black,width: 1),
                 color: Colors.black12,
                 borderRadius: BorderRadius.circular(10),
               ),

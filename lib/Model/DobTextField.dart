@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 
 class DateField extends StatefulWidget {
-  DateField({super.key});
+
+  Function(DateTime) onDateSelected;
+  DateField({super.key, required this.onDateSelected});
 
   @override
   State<DateField> createState() => _DateFieldState();
 }
 
 class _DateFieldState extends State<DateField> {
-  TextEditingController _dob = TextEditingController();
-
+  final TextEditingController _dob = TextEditingController();
+ 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 250,
       child: TextField(
         onTap: () {
@@ -22,7 +24,7 @@ class _DateFieldState extends State<DateField> {
         readOnly: true,
         decoration: InputDecoration(
           hintText: "  জন্ম তারিখ",
-          prefix: Icon(Icons.calendar_month),
+          prefix: const Icon(Icons.calendar_month),
           filled: true,
           fillColor: Colors.grey[200], // Background color of the TextField
           border: OutlineInputBorder(
@@ -39,16 +41,17 @@ class _DateFieldState extends State<DateField> {
   }
 
    Future<void> _selectDate() async {
-    DateTime? _picked = await showDatePicker(
+    DateTime? picked = await showDatePicker(
         context: context,
         initialDate: DateTime.now(),
         firstDate: DateTime(1900),
         lastDate: DateTime(2100),
         );
 
-        if(_picked != null){
+        if(picked != null){
+           widget.onDateSelected(picked);
           setState((){
-            _dob.text = _picked.toString().split(" ")[0];
+            _dob.text = picked.toString().split(" ")[0];
           }
           );
         }
