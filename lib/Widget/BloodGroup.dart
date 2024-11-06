@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class BloodGroup extends StatefulWidget {
-  const BloodGroup({super.key});
-
+  
+  Function(String) onSelected;
+  BloodGroup({super.key,required this.onSelected});
   @override
   State<BloodGroup> createState() => _BloodState();
 }
@@ -38,6 +39,7 @@ class _BloodState extends State<BloodGroup> {
           if (newValue != null) {
             setState(() {
               bloodGroup = newValue;
+             widget.onSelected(bloodGroup);
             });
           }
         });
@@ -54,6 +56,7 @@ class _BloodState extends State<BloodGroup> {
       ),
     );
   }
+ 
 }
 
 

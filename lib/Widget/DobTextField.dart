@@ -49,8 +49,8 @@ class _DateFieldState extends State<DateField> {
         );
 
         if(picked != null){
-           widget.onDateSelected(picked);
           setState((){
+             widget.onDateSelected(picked);
             _dob.text = picked.toString().split(" ")[0];
           }
           );

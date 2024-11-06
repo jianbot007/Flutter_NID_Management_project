@@ -14,12 +14,7 @@ class _GenderSelectionState extends State<GenderSelection> {
   late String Gender = '';
 
 
- void initState() {
-    super.initState();
-    print("Gender $Gender");
-  
-  }
-  @override
+ @override
 
   Widget build(BuildContext context) {
     return Container(
