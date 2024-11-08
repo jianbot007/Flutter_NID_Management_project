@@ -11,7 +11,7 @@ class UserTablePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('User Table'),
+        title: const Text('User Table'),
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.horizontal, // Allow horizontal scrolling if the table overflows

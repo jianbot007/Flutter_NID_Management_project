@@ -41,7 +41,7 @@ class CustomTextField2 extends StatelessWidget {
   final TextEditingController controller ;
   final Icon CustomIcons;
 
-  CustomTextField2({super.key, required this.hinttext,this.IS_Password = false, required this.controller,this.CustomIcons = const Icon(Icons.abc) });
+  const CustomTextField2({super.key, required this.hinttext,this.IS_Password = false, required this.controller,this.CustomIcons = const Icon(Icons.abc) });
 
   @override
   Widget build(BuildContext context) {

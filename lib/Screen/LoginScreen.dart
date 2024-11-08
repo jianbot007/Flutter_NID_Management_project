@@ -90,7 +90,7 @@ class LoginScreen extends StatelessWidget {
                       TextButton(
                         onPressed: () {
                           Navigator.push(
-                            context,  MaterialPageRoute(builder: (context) => LoadingScreen(nextScreen: SignUpScreen(),))
+                            context,  MaterialPageRoute(builder: (context) => const LoadingScreen(nextScreen: SignUpScreen(),))
                           );
                         },
                         child: Container(

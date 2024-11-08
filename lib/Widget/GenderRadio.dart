@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class GenderSelection extends StatefulWidget {
   Function(String) Onselected;
 
@@ -10,7 +11,6 @@ class GenderSelection extends StatefulWidget {
 }
 
 class _GenderSelectionState extends State<GenderSelection> {
-  @override
   late String Gender = '';
 
 
