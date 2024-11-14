@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_nid_management_project/Screen/AccountSettingsPage.dart';
 import 'package:flutter_nid_management_project/Screen/DataCorrectionScreen.dart';
+import 'package:flutter_nid_management_project/Screen/InformationScreen/Registration_InformationScreen.dart';
 import 'package:flutter_nid_management_project/Screen/NIDLostApplicationScreen.dart';
 import 'package:flutter_nid_management_project/Screen/UnknownInfo_screen.dart';
+
+import '../Screen/InformationScreen/MainInformationScreen.dart';
 
 class AccountSettingsButton extends StatefulWidget {
   const AccountSettingsButton({super.key});
@@ -177,7 +180,7 @@ class _UnknownInfoState extends State<UnknownInfo> {
 
     Future.delayed(const Duration(seconds: 1), () {
       Navigator.push(context,
-          MaterialPageRoute(builder: (context) => const UnknownInfo_screen()));
+          MaterialPageRoute(builder: (context) =>InformationScreen()));
       setState(() {
         isLoading = false;
       });
@@ -212,3 +215,5 @@ class _UnknownInfoState extends State<UnknownInfo> {
     );
   }
 }
+
+

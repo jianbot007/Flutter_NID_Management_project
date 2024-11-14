@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_nid_management_project/Buttons%20&%20Container/Downbar.dart';
 import 'package:flutter_nid_management_project/Buttons%20&%20Container/TextFields.dart';
+import 'package:flutter_nid_management_project/Screen/NotificationPage.dart';
 import 'package:flutter_nid_management_project/setColor.dart';
 
 class Account_Settings extends StatelessWidget {
   Account_Settings({super.key});
   final TextEditingController _OldPassController = TextEditingController();
   final TextEditingController _NewPassController = TextEditingController();
+  var NotificationText = "আপনার পাসওয়ার্ড পরিবর্তন সম্পূর্ন হয়েছে";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -91,7 +93,11 @@ class Account_Settings extends StatelessWidget {
                       height: 30,
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                         Navigator.push(
+                          context, MaterialPageRoute(builder: (context )=> NotificationScreen(NotificationText: NotificationText))
+                        );
+                      },
                       child: Container(
                         alignment: Alignment.center,
                         height: 50,
