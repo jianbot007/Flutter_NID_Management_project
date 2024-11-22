@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_nid_management_project/Buttons%20&%20Container/Loading_screen.dart';
 import 'package:flutter_nid_management_project/Buttons%20&%20Container/TextFields.dart';
+import 'package:flutter_nid_management_project/Model/FaceScan_Authentication.dart';
+import 'package:flutter_nid_management_project/Model/Finger_Authentication.dart';
 import 'package:flutter_nid_management_project/Model/UserList.dart';
 import 'package:flutter_nid_management_project/Screen/NotificationPage.dart';
 import 'package:flutter_nid_management_project/Screen/Table(test).dart';
@@ -17,8 +19,7 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-
-   UserList userlist = UserList();
+  UserList userlist = UserList();
 
   final TextEditingController _birthCertificateNo = TextEditingController();
   final TextEditingController _username = TextEditingController();
@@ -41,9 +42,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
   DateTime? _pickedDon;
   late String _Dob;
   late String _BloodGroup;
-  
-  var NotificationText = "আপনার তথ্য নিবন্ধন সফল হয়েছে, আগামী ৭২ ঘন্টার ভিতর আপনার মোবাইল নাম্বারে NID নাম্বার এবং পাসওয়ার্ড পাঠিয়ে দেওয়া হবে, পাসওয়ার্ড এবং NID নাম্বার দিয়ে লগিন করে পাসওয়ার্ড পরিবর্তন করুন........";
 
+  var NotificationText =
+      "আপনার তথ্য নিবন্ধন সফল হয়েছে, আগামী ৭২ ঘন্টার ভিতর আপনার মোবাইল নাম্বারে NID নাম্বার এবং পাসওয়ার্ড পাঠিয়ে দেওয়া হবে, পাসওয়ার্ড এবং NID নাম্বার দিয়ে লগিন করে পাসওয়ার্ড পরিবর্তন করুন........";
 
   void _resetScreen() {
     Navigator.pushReplacement(
@@ -121,6 +122,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
             height: 30,
           ),
           GestureDetector(
+            onTap: () async {
+                        FaceScanAuthentication faceScan = FaceScanAuthentication();
+                        await faceScan.initializeCamera();
+                        await faceScan.captureImage();
+                        faceScan.dispose();
+            },
             child: Container(
                 alignment: Alignment.center,
                 height: 110,
@@ -135,6 +142,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
             height: 30,
           ),
           GestureDetector(
+            onTap: () async {
+                   Finger_Authentication faceAuth = Finger_Authentication();             
+                  await faceAuth.authenticateUser();
+            },
             child: Container(
                 alignment: Alignment.center,
                 height: 110,
@@ -315,7 +326,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   }
 
   void onTap() {
-   User user = User(
+    User user = User(
         birthCertificateNo: _birthCertificateNo.text,
         username: _username.text,
         motherNIDno: _motherNIDno.text,
@@ -335,13 +346,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
         voterIDno: _voterIDno.text,
         dob: _Dob,
         bloodGroup: _BloodGroup);
-        userlist.addUser(user);
-      _resetScreen();
+    userlist.addUser(user);
+    _resetScreen();
     Navigator.push(
         context,
         MaterialPageRoute(
             builder: (context) => LoadingScreen(
-                  nextScreen: NotificationScreen(NotificationText : NotificationText),
+                  nextScreen:
+                      NotificationScreen(NotificationText: NotificationText),
                 )));
   }
 }
