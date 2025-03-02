@@ -38,7 +38,7 @@ class InformationScreen extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height : 140
         ),
         Expanded(
@@ -63,12 +63,12 @@ class InformationScreen extends StatelessWidget {
                 ),
               ),
             ),
-             SizedBox(
+             const SizedBox(
           height : 50
         ),
              GestureDetector(
               onTap: () {
-                Navigator.push(context,MaterialPageRoute(builder: (context)=> NotificationScreen(NotificationText: "FaceScan এবং FingerPrint এর মিল থাকলে এবং নতুন তথ্য এর প্রমান থাকলে যেকোন তথ্য সংশোধন করা যাবে")));
+                Navigator.push(context,MaterialPageRoute(builder: (context)=> const NotificationScreen(NotificationText: "FaceScan এবং FingerPrint এর মিল থাকলে এবং নতুন তথ্য এর প্রমান থাকলে যেকোন তথ্য সংশোধন করা যাবে")));
               },
               child: Container(
                 height: 50,
@@ -86,13 +86,13 @@ class InformationScreen extends StatelessWidget {
                 ),
               ),
             ),
-             SizedBox(
+             const SizedBox(
           height : 50
         ),
              GestureDetector(
               onTap: () {
 
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=> NotificationScreen(NotificationText: "NID হারিয়ে গেলে দ্রুত GD করতে হবে এবং এর কপি আমাদের জমা দিতে হবে ,ফলে আপনার NID দ্বারা কোন অপরাধমুলক কাজ করতে পারবে না এবং আপনাকে একই নাম্বারে নতুন NID Card দেওয়া হবে")));
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=> const NotificationScreen(NotificationText: "NID হারিয়ে গেলে দ্রুত GD করতে হবে এবং এর কপি আমাদের জমা দিতে হবে ,ফলে আপনার NID দ্বারা কোন অপরাধমুলক কাজ করতে পারবে না এবং আপনাকে একই নাম্বারে নতুন NID Card দেওয়া হবে")));
               },
               child: Container(
                 height: 50,
@@ -112,7 +112,7 @@ class InformationScreen extends StatelessWidget {
             ),
           ]),
         ),
-        DownBar(),
+        const DownBar(),
       ],
     ));
   }

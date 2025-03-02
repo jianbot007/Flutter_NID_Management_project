@@ -5,7 +5,6 @@ import 'package:flutter_nid_management_project/Model/FaceScan_Authentication.dar
 import 'package:flutter_nid_management_project/Model/Finger_Authentication.dart';
 import 'package:flutter_nid_management_project/Model/UserList.dart';
 import 'package:flutter_nid_management_project/Screen/NotificationPage.dart';
-import 'package:flutter_nid_management_project/Screen/Table(test).dart';
 import 'package:flutter_nid_management_project/Widget/BloodGroup.dart';
 import 'package:flutter_nid_management_project/Widget/DobTextField.dart';
 import 'package:flutter_nid_management_project/Widget/GenderRadio.dart';
@@ -123,10 +122,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
           ),
           GestureDetector(
             onTap: () async {
-                        FaceScanAuthentication faceScan = FaceScanAuthentication();
-                        await faceScan.initializeCamera();
-                        await faceScan.captureImage();
-                        faceScan.dispose();
+                        //FaceScanAuthentication faceScan = FaceScanAuthentication();
+                      //  await faceScan.initializeCamera();
+                       // await faceScan.captureImage();
+                      //  faceScan.dispose();
             },
             child: Container(
                 alignment: Alignment.center,
@@ -143,7 +142,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           ),
           GestureDetector(
             onTap: () async {
-                   Finger_Authentication faceAuth = Finger_Authentication();             
+                  Finger_Authentication faceAuth = Finger_Authentication();             
                   await faceAuth.authenticateUser();
             },
             child: Container(

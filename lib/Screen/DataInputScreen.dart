@@ -84,7 +84,7 @@ class _DataInputScreenState extends State<DataInputScreen> {
         const Text(
             "আপনি এখন আপনার তথ্য সংশোধন করতে পারবেন,সম্পুর্ন ফর্মটি সাবধানে ফিল-আপ করুন,ফিল-আপ করা তথ্যগুলোই হবে আপনার বর্তমান তথ্য",
             style: TextStyle(fontSize: 15, color: Colors.red)),
-        SizedBox(height: 30),
+        const SizedBox(height: 30),
         CustomTextField(
           hinttext: 'আবেদনকারীর নাম',
           IS_Password: false,

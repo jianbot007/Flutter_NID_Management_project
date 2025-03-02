@@ -59,13 +59,13 @@ class RegistrationInformationScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
                     _infoText[index],
-                    style: TextStyle(fontSize: 15),
+                    style: const TextStyle(fontSize: 15),
                   ),
                 );
               },
             ),
           ),
-          DownBar(),
+          const DownBar(),
 
         ],
       ),

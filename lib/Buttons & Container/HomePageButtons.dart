@@ -180,7 +180,7 @@ class _UnknownInfoState extends State<UnknownInfo> {
 
     Future.delayed(const Duration(seconds: 1), () {
       Navigator.push(context,
-          MaterialPageRoute(builder: (context) =>InformationScreen()));
+          MaterialPageRoute(builder: (context) =>const InformationScreen()));
       setState(() {
         isLoading = false;
       });
