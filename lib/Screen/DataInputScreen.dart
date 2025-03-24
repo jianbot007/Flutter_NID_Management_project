@@ -3,7 +3,6 @@ import 'package:flutter_nid_management_project/Buttons%20&%20Container/TextField
 import 'package:flutter_nid_management_project/Screen/NotificationPage.dart';
 import 'package:flutter_nid_management_project/Widget/BloodGroup.dart';
 import 'package:flutter_nid_management_project/Widget/DobTextField.dart';
-import 'package:flutter_nid_management_project/Widget/GenderRadio.dart';
 import 'package:flutter_nid_management_project/setColor.dart';
 
 class DataInputScreen extends StatefulWidget {
@@ -145,6 +144,7 @@ class _DataInputScreenState extends State<DataInputScreen> {
         ),
         TextButton(
                       onPressed: () {
+  
                         Navigator.push(
                           context, MaterialPageRoute(builder: (context )=> NotificationScreen(NotificationText: NotificationText))
                         );

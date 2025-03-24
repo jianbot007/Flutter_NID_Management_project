@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "433258145145",
+    "project_id": "nidprojectmain",
+    "storage_bucket": "nidprojectmain.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:433258145145:android:740eae532f77ea0e68bba8",
+        "android_client_info": {
+          "package_name": "com.example.flutter_nid_management_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCgQA9mbSZpodkRaHxe3fySTqVACOv6o4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

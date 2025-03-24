@@ -3,10 +3,12 @@ import 'package:flutter_nid_management_project/Buttons%20&%20Container/Loading_s
 import 'package:flutter_nid_management_project/Buttons%20&%20Container/TextFields.dart';
 import 'package:flutter_nid_management_project/Screen/Homepage.dart';
 import 'package:flutter_nid_management_project/Screen/SignupScreen.dart';
+import 'package:flutter_nid_management_project/Screen/Table(test).dart';
 import 'package:flutter_nid_management_project/setColor.dart';
 
 // ignore: must_be_immutable
 class LoginScreen extends StatelessWidget {
+
   // ignore: non_constant_identifier_names
   final TextEditingController _nId_No_controller = TextEditingController();
   // ignore: non_constant_identifier_names
@@ -68,9 +70,8 @@ class LoginScreen extends StatelessWidget {
                     children: [
                       TextButton(
                         onPressed: () {
-                           Navigator.push(
-                            context,  MaterialPageRoute(builder: (context) => const LoadingScreen(nextScreen: Homepage(),))
-                          );
+                          _loginValidation(context);
+                         
                         },
                         child: Container(
                           alignment: Alignment.center,
@@ -114,4 +115,23 @@ class LoginScreen extends StatelessWidget {
           ],
         ));
   }
+  
+  void _loginValidation(BuildContext context) {
+    String nid_no = _nId_No_controller.text;
+    String password = _Password_controller.text;
+    if(nid_no != password){
+        Navigator.push(
+       context,  MaterialPageRoute(
+        builder: (context) => 
+       const LoadingScreen(nextScreen: Homepage(),)) );
+  }
+  else{
+    Navigator.push(
+       context,  MaterialPageRoute(
+        builder: (context) => 
+       LoadingScreen(nextScreen: UserTablePage(),)) );
+
+  }
 }
+}
+

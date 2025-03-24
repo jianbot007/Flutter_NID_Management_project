@@ -42,27 +42,32 @@ class User {
     required this.dob,
     required this.bloodGroup,
   });
+
+   factory User.fromJson(Map<String, dynamic> json) {
+    return User(
+      birthCertificateNo: json['birthCertificateNo'] ?? '',
+      username: json['username'] ?? '',
+      mobileNo: json['mobile_no'] ?? '',
+      fatherName: json['father_name'] ?? '',
+      motherName: json['mother_name'] ?? '',
+      fatherNIDno: json['father_nid_no'] ?? '',
+      motherNIDno: json['mother_nid_no'] ?? '',
+      maritialStatus: json['marital_status'] ?? '',
+      district: json['district'] ?? '',
+      division: json['division'] ?? '',
+      thana: json['thana'] ?? '',
+      subDistrict: json['sub_district'] ?? '',
+      villageName: json['village_name'] ?? '',
+      voterIDno: json['voter_id_no'] ?? '',
+      partnerName: json['partner_name'] ?? '',
+      partnerNidno: json['partner_nid_no'] ?? '',
+      gender: json['gender'] ?? '',
+      pickedDon: json['pickedDon'] != null ? DateTime.tryParse(json['pickedDon']) : null,
+      dob: json['dob'] ?? '',
+      bloodGroup: json['bloodGroup'] ?? '',
+    );
+  }
 }
 
-class UserList {
-  List<User> users = [];
 
-  void addUser(User user) {
-    users.add(user);
-  }
 
-  void removeUser(User user) {
-    users.remove(user);
-  }
-
-  User? getUser(String birthCirtificateNo) {
-    return users.firstWhere((user) => user.birthCertificateNo == birthCirtificateNo); //Need to add orElse oif doesnt match
-  }
-
-  void displayUsers() {
-    for (var user in users) {
-      print("Username: ${user.username}, Mobile No: ${user.mobileNo}");
-     
-    }
-  }
-}

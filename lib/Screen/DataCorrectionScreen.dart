@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_nid_management_project/Buttons%20&%20Container/Downbar.dart';
 import 'package:flutter_nid_management_project/Buttons%20&%20Container/TextFields.dart';
-import 'package:flutter_nid_management_project/Screen/DataInputScreen.dart';
-import 'package:flutter_nid_management_project/Screen/NotificationPage.dart';
 import 'package:flutter_nid_management_project/setColor.dart';
 
 class Data_Correction_Screen extends StatefulWidget {

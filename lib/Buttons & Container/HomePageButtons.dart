@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_nid_management_project/Screen/AccountSettingsPage.dart';
 import 'package:flutter_nid_management_project/Screen/DataCorrectionScreen.dart';
-import 'package:flutter_nid_management_project/Screen/InformationScreen/Registration_InformationScreen.dart';
 import 'package:flutter_nid_management_project/Screen/NIDLostApplicationScreen.dart';
-import 'package:flutter_nid_management_project/Screen/UnknownInfo_screen.dart';
 
 import '../Screen/InformationScreen/MainInformationScreen.dart';
 
@@ -129,7 +127,7 @@ class _NID_INfo_Update_ButtonState extends State<NID_INfo_Update_Button> {
 
     Future.delayed(const Duration(seconds: 1), () {
       Navigator.push(context,
-          MaterialPageRoute(builder: (context) => Data_Correction_Screen()));
+          MaterialPageRoute(builder: (context) => const Data_Correction_Screen()));
       setState(() {
         isLoading = false;
       });

@@ -1,13 +1,13 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_nid_management_project/Buttons%20&%20Container/Loading_screen.dart';
 import 'package:flutter_nid_management_project/Buttons%20&%20Container/TextFields.dart';
-import 'package:flutter_nid_management_project/Model/FaceScan_Authentication.dart';
 import 'package:flutter_nid_management_project/Model/Finger_Authentication.dart';
-import 'package:flutter_nid_management_project/Model/UserList.dart';
 import 'package:flutter_nid_management_project/Screen/NotificationPage.dart';
 import 'package:flutter_nid_management_project/Widget/BloodGroup.dart';
 import 'package:flutter_nid_management_project/Widget/DobTextField.dart';
 import 'package:flutter_nid_management_project/Widget/GenderRadio.dart';
+import 'package:flutter_nid_management_project/api/registerAPI.dart';
 import 'package:flutter_nid_management_project/setColor.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -18,7 +18,7 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  UserList userlist = UserList();
+  
 
   final TextEditingController _birthCertificateNo = TextEditingController();
   final TextEditingController _username = TextEditingController();
@@ -304,7 +304,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           ),
           TextButton(
             onPressed: () {
-              onTap();
+               _signupData(context);
             },
             child: Container(
               alignment: Alignment.center,
@@ -323,36 +323,83 @@ class _SignUpScreenState extends State<SignUpScreen> {
       ),
     );
   }
+  
+  _clearController(){
+       _birthCertificateNo.clear();
+      _username.clear();
+      _mobileNo.clear();
+      _fatherName.clear();
+      _motherName.clear();
+      _fatherNIDno.clear();
+      _motherNIDno.clear();
+      _maritialStatus.clear();
+      _district.clear();
+      _division.clear();
+      _thana.clear();
+      _subDistrict.clear();
+      _villagename.clear();
+      _voterIDno.clear();
+      _partnerName.clear();
+      _partnerNidno.clear();
 
-  void onTap() {
-    User user = User(
-        birthCertificateNo: _birthCertificateNo.text,
-        username: _username.text,
-        motherNIDno: _motherNIDno.text,
-        mobileNo: _mobileNo.text,
-        fatherName: _fatherName.text,
-        motherName: _motherName.text,
-        maritialStatus: _maritialStatus.text,
-        fatherNIDno: _fatherNIDno.text,
-        district: _district.text,
-        division: _division.text,
-        thana: _thana.text,
-        partnerName: _partnerName.text,
-        partnerNidno: _partnerNidno.text,
-        gender: _gender,
-        subDistrict: _subDistrict.text,
-        villageName: _villagename.text,
-        voterIDno: _voterIDno.text,
-        dob: _Dob,
-        bloodGroup: _BloodGroup);
-    userlist.addUser(user);
-    _resetScreen();
-    Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => LoadingScreen(
-                  nextScreen:
-                      NotificationScreen(NotificationText: NotificationText),
-                )));
+      // Reset gender, DOB, and blood group as well
+      _gender = "";
+      _BloodGroup = "";
+      _Dob = "";
   }
+
+
+  Future<void> _signupData(BuildContext context) async {
+   RegisterAPI registration = RegisterAPI();
+  Map<String, dynamic> data = {
+    "birth_certificate_no": _birthCertificateNo.text,
+    "username": _username.text,
+    "mobile_no": _mobileNo.text,
+    "father_name": _fatherName.text,
+    "mother_name": _motherName.text,
+    "father_nid_no": _fatherNIDno.text,
+    "mother_nid_no": _motherNIDno.text,
+    "marital_status": _maritialStatus.text,
+    "district": _district.text,
+    "division": _division.text,
+    "thana": _thana.text,
+    "sub_district": _subDistrict.text,
+    "village_name": _villagename.text,
+    "voter_id_no": _voterIDno.text,
+    "partner_name": _partnerName.text,
+    "partner_nid_no": _partnerNidno.text,
+    "gender": _gender,
+    "dob": _pickedDon?.toString() ?? "",
+    "blood_group": _BloodGroup
+  };
+
+  var response = await registration.signupUser(data);
+
+ if (response['success']) {
+    print("Success: ${response['message']}");
+    _clearController();
+       if (mounted) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => LoadingScreen(
+              nextScreen: NotificationScreen(NotificationText: NotificationText),
+            ),
+          ),
+        );
+      }
+  } else {
+    print("Error: ${response['message']}");
+     Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const LoadingScreen(
+              nextScreen: NotificationScreen(NotificationText: "Registration Failed ,Try Again"),
+            ),
+          ),
+        );
+  }
+
 }
+}
+
